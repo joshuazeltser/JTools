@@ -1,3 +1,5 @@
+import json
+
 from django.test import TestCase
 
 from stringFormatter.formatter import *
@@ -20,5 +22,5 @@ class FormatterTests(TestCase):
 
     def test_word_occurence_count(self):
         string = "hello my name is joshua and my name is joshua joshua is my name hello what the hell"
-
-        print (word_occurence_count(string))
+        #can't get this test to work properly
+        print(json.dumps(word_occurence_count(string)))
