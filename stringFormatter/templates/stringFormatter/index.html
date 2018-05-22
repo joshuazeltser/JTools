@@ -1,0 +1,9 @@
+{% if previous_strings_list %}
+    <ul>
+    {% for string in previous_strings_list %}
+        <li><a href="{% url 'stringFormatter:detail' string.text_id}">{{ string.text }}</a></li>
+    {% endfor %}
+    </ul>
+{% else %}
+    <p>No history is available.</p>
+{% endif %}

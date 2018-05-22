@@ -1,0 +1,6 @@
+<h1>{{ text.text }}</h1>
+<ul>
+{% for string in text.choice_set.all %}
+    <li>{{ string.text }}</li>
+{% endfor %}
+</ul>
