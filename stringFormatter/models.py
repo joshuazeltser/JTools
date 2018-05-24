@@ -8,3 +8,6 @@ class Text(models.Model):
 
     def __str__(self):
         return self.text
+
+    def to_upper_case(string):
+        return string.upper()

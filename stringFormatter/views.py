@@ -2,23 +2,24 @@ from django.shortcuts import render
 from django.http import HttpResponse
 from .models import Text
 from django.shortcuts import get_object_or_404
+from django.urls import reverse
+from django.core.exceptions import *
 
 # Create your views here.
 
 def index(request):
-    previous_strings_list = Text.objects.order_by('-text_id')
+    return render(request, 'stringFormatter/details.html')
 
-    context = {'previous_strings_list': previous_strings_list}
-    return render(request, 'stringFormatter/index.html', context)
+def details(request):
+    if 'q' in request.POST:
+        message = 'You searched for: %r' % request.POST['q']
+    else:
+        message = 'You submitted an empty form.'
+    return render(request, 'stringFormatter/text.html')
 
-def details(request, text_id):
-    text = get_object_or_404(Text, pk=text_id)
+def text(request):
 
-    return render(request, 'stringFormatter/detail.html', {'text': text})
-
-def text(request, text_id):
-    return HttpResponse("This is the string that you want to be formatted %s." % text_id)
-
+    HttpResponse("This is the result of your requested string formatting %s" )
 
 def result(request, text_id):
     return HttpResponse("This is the result of your requested string formatting %s" % text_id)
