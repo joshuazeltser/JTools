@@ -4,15 +4,18 @@ from .models import Text
 
 
 def index(request):
+
+
+    return render(request, 'stringFormatter/temp/index.html')
+
+
+def formatter(request):
+    message = ""
+
     if 'q' in request.POST:
         text = Text()
         text.result = to_upper_case(request.POST['q'])
         message = text.result
-    else:
-        message = 'You submitted an empty form.'
-
-    return render(request, 'stringFormatter/index.html', {'content': message})
 
 
-def details(request):
-    return render(request, 'stringFormatter/index.html', {'content': message})
+    return render(request, 'stringFormatter/temp/formatter.html', {'content': message})

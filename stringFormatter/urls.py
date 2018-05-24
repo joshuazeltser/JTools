@@ -6,6 +6,6 @@ app_name = 'stringFormatter'
 urlpatterns = [
         path('', views.index, name='index'),
 
-        path(r'details/', views.details, name='details'),
+        path(r'formatter/', views.formatter, name='formatter'),
 
 ]

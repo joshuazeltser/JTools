@@ -3,3 +3,4 @@
 *.iml
 *.pyc
 stringFormatter/__pycache__/
+mytools/__pycache__/
