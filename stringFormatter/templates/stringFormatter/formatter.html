@@ -57,7 +57,7 @@
             </li>
           </ul>
 
-            
+
         </div>
       </div>
     </nav>
@@ -90,14 +90,14 @@
 
 <div class="input-group">
 
-  <input type="text" class="form-control">
-  <input type="text" class="form-control">
+  <input type="text" class="form-control" name="q" value="{{ content }}">
+  <input type="text" class="form-control" name="r" value="{{ content2 }}">
 </div>
     </br>
-        <div class="btn-group btn-group-toggle" data-toggle="buttons">
+        <div class="btn-group btn-group-toggle" onclick="javascript:document.forms[0].submit();" data-toggle="buttons">
 
-  <label class="btn btn-primary">
-    <input type="radio" name="options1" id="option2" autocomplete="off"> Upper Case
+  <label class="btn btn-primary" value="one">
+      <input type="radio"  name="one" value="one" id="option2" autocomplete="off"> Upper Case
   </label>
   <label class="btn btn-primary">
     <input type="radio" name="options2" id="option3" autocomplete="off"> Lower Case

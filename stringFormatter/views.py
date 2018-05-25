@@ -11,11 +11,21 @@ def index(request):
 
 def formatter(request):
     message = ""
+    original = ""
+
+    if 'one' in request.POST:
+        print('djksakjsadkjsadkjsadhhdask')
+
+
 
     if 'q' in request.POST:
+        original = request.POST['q']
         text = Text()
-        text.result = to_upper_case(request.POST['q'])
+        text.result = to_upper_case(original)
         message = text.result
 
 
-    return render(request, 'stringFormatter/formatter.html', {'content': message})
+
+
+
+    return render(request, 'stringFormatter/formatter.html', {'content': original, 'content2': message})
