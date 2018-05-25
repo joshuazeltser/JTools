@@ -6,7 +6,7 @@ from .models import Text
 def index(request):
 
 
-    return render(request, 'stringFormatter/temp/index.html')
+    return render(request, 'stringFormatter/index.html')
 
 
 def formatter(request):
@@ -18,4 +18,4 @@ def formatter(request):
         message = text.result
 
 
-    return render(request, 'stringFormatter/temp/formatter.html', {'content': message})
+    return render(request, 'stringFormatter/formatter.html', {'content': message})

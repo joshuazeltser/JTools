@@ -2,5 +2,5 @@
 *.xml
 *.iml
 *.pyc
-stringFormatter/__pycache__/
-mytools/__pycache__/
+stringFormatter/__pycache__/*
+mytools/__pycache__/*

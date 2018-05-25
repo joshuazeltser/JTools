@@ -35,14 +35,14 @@
     <!-- Navigation -->
     <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">
       <div class="container">
-        <a class="navbar-brand" href="index/">MyTools</a>
+        <a class="navbar-brand" href="/stringFormatter/">MyTools</a>
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
           <span class="navbar-toggler-icon"></span>
         </button>
         <div class="collapse navbar-collapse" id="navbarResponsive">
           <ul class="navbar-nav ml-auto">
             <li class="nav-item active">
-              <a class="nav-link" href="index/">Home
+              <a class="nav-link" href="/stringFormatter/">Home
                 <span class="sr-only">(current)</span>
               </a>
             </li>
@@ -50,22 +50,68 @@
               <a class="nav-link" href="#">About</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="/">Formatting</a>
+              <a class="nav-link" href="">Formatting</a>
             </li>
             <li class="nav-item">
               <a class="nav-link" href="#">Contact</a>
             </li>
           </ul>
+
+            
         </div>
       </div>
     </nav>
+    <script>
+    $(".nav a").on("click", function(){
+  $(".nav").find(".active").removeClass("active");
+  $(this).parent().addClass("active");
+});
 
-    <!-- Page Content -->
+</script>
+
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-12 text-center">
+          <h1 class="mt-5">String Formatter</h1>
+
+      </div>
+      </div>
+    </div>
+
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-12 text-center">
+
+          <!-- Page Content -->
     <form action="" method="post">
         {% csrf_token %}
-        <input type="text" name="q" value="{{ content }}">
-        <input type="submit" value="Search">
+        <!--<input type="text" name="q" value="{{ content }}">-->
+        <!--<input type="submit" value="Search">-->
+
+<div class="input-group">
+
+  <input type="text" class="form-control">
+  <input type="text" class="form-control">
+</div>
+    </br>
+        <div class="btn-group btn-group-toggle" data-toggle="buttons">
+
+  <label class="btn btn-primary">
+    <input type="radio" name="options1" id="option2" autocomplete="off"> Upper Case
+  </label>
+  <label class="btn btn-primary">
+    <input type="radio" name="options2" id="option3" autocomplete="off"> Lower Case
+  </label>
+</div>
+
     </form>
+
+      </div>
+      </div>
+    </div>
+
+
+
 
 <!-- jQuery first, then Popper.js, then Bootstrap JS -->
     <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
