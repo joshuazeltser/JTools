@@ -19,6 +19,7 @@ def formatter(request):
     elif 'upper' in request.POST:
         message2 = Text.to_upper_case(message)
     elif 'word' in request.POST:
+        print(message3)
         message4 = Text.word_count(message3)
     elif 'char' in request.POST:
         message4 = Text.char_count(message3)

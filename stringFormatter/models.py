@@ -15,9 +15,6 @@ class Text(models.Model):
     def to_lower_case(string):
         return string.lower()
 
-    def reverse_string(string):
-        return string[::-1]
-
     def word_count(string):
         words = string.split()
 
