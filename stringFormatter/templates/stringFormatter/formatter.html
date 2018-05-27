@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 
-  <head>
+<head>
 
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
@@ -12,7 +12,8 @@
 
 
     <!-- Bootstrap CSS -->
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" integrity="sha384-WskhaSGFgHYWDcbwN70/dfYBj47jz9qbsMId/iRN3ewGhXQFZCSftd1LZCfmhktB" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css"
+          integrity="sha384-WskhaSGFgHYWDcbwN70/dfYBj47jz9qbsMId/iRN3ewGhXQFZCSftd1LZCfmhktB" crossorigin="anonymous">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.0/normalize.css">
 
     <!-- Custom styles for this template -->
@@ -26,98 +27,115 @@
         }
       }
 
+
     </style>
 
-  </head>
+</head>
 
-  <body>
+<body>
 
-    <!-- Navigation -->
-    <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">
-      <div class="container">
+<!-- Navigation -->
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">
+    <div class="container">
         <a class="navbar-brand" href="/stringFormatter/">MyTools</a>
-        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
-          <span class="navbar-toggler-icon"></span>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive"
+                aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
         </button>
         <div class="collapse navbar-collapse" id="navbarResponsive">
-          <ul class="navbar-nav ml-auto">
-            <li class="nav-item active">
-              <a class="nav-link" href="/stringFormatter/">Home
-                <span class="sr-only">(current)</span>
-              </a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" href="#">About</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" href="">Formatting</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" href="#">Contact</a>
-            </li>
-          </ul>
+            <ul class="navbar-nav ml-auto">
+                <li class="nav-item active">
+                    <a class="nav-link" href="/stringFormatter/">Home
+                        <span class="sr-only">(current)</span>
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#">About</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="">Formatting</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#">Contact</a>
+                </li>
+            </ul>
 
 
         </div>
-      </div>
-    </nav>
-    <script>
+    </div>
+</nav>
+<script>
     $(".nav a").on("click", function(){
   $(".nav").find(".active").removeClass("active");
   $(this).parent().addClass("active");
 });
 
+
 </script>
 
-    <div class="container">
-      <div class="row">
+<div class="container">
+    <div class="row">
         <div class="col-lg-12 text-center">
-          <h1 class="mt-5">String Formatter</h1>
+            <h1 class="mt-5">String Formatter</h1>
 
-      </div>
-      </div>
+        </div>
     </div>
-
-    <div class="container">
-      <div class="row">
-        <div class="col-lg-12 text-center">
-
-          <!-- Page Content -->
-    <form action="" method="post">
-        {% csrf_token %}
-        <!--<input type="text" name="q" value="{{ content }}">-->
-        <!--<input type="submit" value="Search">-->
-
-<div class="input-group">
-
-  <input type="text" class="form-control" name="q" value="{{ content }}">
-  <input type="text" class="form-control" name="r" value="{{ content2 }}">
-</div>
-    </br>
-        <div class="btn-group btn-group-toggle" onclick="javascript:document.forms[0].submit();" data-toggle="buttons">
-
-  <label class="btn btn-primary" value="one">
-      <input type="radio"  name="one" value="one" id="option2" autocomplete="off"> Upper Case
-  </label>
-  <label class="btn btn-primary">
-    <input type="radio" name="options2" id="option3" autocomplete="off"> Lower Case
-  </label>
 </div>
 
-    </form>
+<div class="container">
+    <div class="row">
+        <div class="col-lg-12 text-center">
 
-      </div>
-      </div>
+            <!-- Page Content -->
+            <form action="" method="post">
+                {% csrf_token %}
+
+                <div class="input-group">
+
+                    <input type="text" class="form-control" name="input1" value="{{ content }}">
+                    <input type="text" class="form-control" name="input2" value="{{ content2 }}">
+                </div>
+                </br>
+
+                <button class="btn btn-primary" type="submit" value="upper" name="upper" id="upper" autocomplete="off"> Upper Case </button>
+                <button class="btn btn-primary" type="submit" value="lower" name="lower" id="lower" autocomplete="off"> Lower Case </button>
+
+            <br>
+
+                <br>
+                <div class="input-group" >
+
+                    <input type="text" class="form-control" name="input3" value="{{ content3 }}">
+                    <input type="text" class="form-control" name="input4" value="{{ content4}}">
+                </div>
+
+                </br>
+
+                <button class="btn btn-success" type="submit" value="word" name="word" id="word" autocomplete="off"> Word Count </button>
+                <button class="btn btn-success" type="submit" value="char" name="char" id="char" autocomplete="off"> Character Count </button>
+
+
+
+
+            </form>
+
+
+        </div>
     </div>
-
-
+</div>
 
 
 <!-- jQuery first, then Popper.js, then Bootstrap JS -->
-    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
-    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js" integrity="sha384-smHYKdLADwkXOn1EmN1qk/HfnUcbVRZyYmZ4qpPea6sjB/pTJ0euyQp0Mk8ck+5T" crossorigin="anonymous"></script>
+<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+        integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+        crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js"
+        integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49"
+        crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js"
+        integrity="sha384-smHYKdLADwkXOn1EmN1qk/HfnUcbVRZyYmZ4qpPea6sjB/pTJ0euyQp0Mk8ck+5T"
+        crossorigin="anonymous"></script>
 
-  </body>
+</body>
 
 </html>
