@@ -22,6 +22,8 @@
         }
 
 
+
+
     </style>
 
 </head>
@@ -80,41 +82,45 @@
             <!-- Example row of columns -->
             <div class="row">
                 <div class="col-md-6" align="center">
-                    <div class="row" align="center">
-                        <h2>Edit Case</h2>
-                        <p>
-                        <div class="input-group">
-
-
-                            <input type="text" class="form-control" name="input1" value="{{ content }}">
-                            <input type="text" class="form-control" name="input2" value="{{ content2 }}" readonly>
-                        </div>
-
-                    </p>
-                        <br>
+                    <!--<div class="row" align="center">-->
+                    <h2>Edit Case</h2>
                     <p>
-                            <button class="btn btn-primary" type="submit" value="upper" name="upper" id="upper"
-                                    autocomplete="off"> Upper Case
-                            </button>
-                            <button class="btn btn-primary" type="submit" value="lower" name="lower" id="lower"
-                                    autocomplete="off"> Lower Case
-                            </button>
-                    </p>
+                    <div class="input-group">
 
+
+                        <input type="text" class="form-control" name="input1" value="{{ content }}">
+                        <input type="text" class="form-control" name="input2" value="{{ content2 }}" readonly>
                     </div>
-                    <div class="row" align="center">
-                        <h2>String Splitter</h2>
-                        <div class="input-group">
-                            <input type="text" class="form-control" name="input5" value="{{ content5 }}">
-                            <input type="text" class="form-control" name="input6" value="{{ content6 }}" readonly>
-                        </div>
-
-                        <p>
-                            <button class="btn btn-warning" type="submit" value="split" name="split" id="split"
-                                    autocomplete="off"> Split
-                            </button>
 
                     </p>
+                    <p>
+                        <button class="btn btn-primary" type="submit" value="upper" name="upper" id="upper"
+                                autocomplete="off"> Upper Case
+                        </button>
+                        <button class="btn btn-primary" type="submit" value="lower" name="lower" id="lower"
+                                autocomplete="off"> Lower Case
+                        </button>
+                    </p>
+
+                    <p>
+                    <h2>String Splitter</h2>
+                    <div class="input-group">
+                        <input type="text" class="form-control" name="input5" value="{{ content5 }}">
+                        <input type="text" class="form-control" name="input6" value="{{ content6 }}" readonly>
+                    </div>
+
+                    </p>
+
+
+                    <div class="input-group" align="center">
+                        <div class="input-group-prepend">
+                            <button class="btn btn-warning" type="submit" name="split" value="split">Split Using
+                            </button>
+                        </div>
+                        <div style="width: 200px;" align="center">
+                            <input type="text" class="form-control" name="input7" value="{{ content7 }}" placeholder="Enter character here" aria-label=""
+                                   aria-describedby="basic-addon1">
+                        </div>
                     </div>
 
                 </div>
@@ -124,8 +130,13 @@
                     <h2>Paragraph Review</h2>
 
                     <p>
-                        <textarea class="form-control" name="input3" id="input3" value="{{ content3 }}"
-                                  rows="10"></textarea>
+                        <textarea class="form-control" name="input3" id="input3"
+                                  rows="10">{{ content3 }}</textarea>
+                        <style>
+                            textarea {
+                                resize: none;
+                            }
+                        </style>
                         <input type="hidden" name="hidden" id="hidden" value="{{ content3 }}">
                     </p>
                     <p>
