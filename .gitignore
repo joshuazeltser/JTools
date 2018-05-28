@@ -1,3 +1,7 @@
-.idea
-.xml
-.iml
+*.idea
+*.xml
+*.iml
+*.pyc
+*.DS_Store
+stringFormatter/__pycache__/*
+mytools/__pycache__/*
