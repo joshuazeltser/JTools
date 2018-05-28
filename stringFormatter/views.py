@@ -16,6 +16,8 @@ def formatter(request):
     message5 = request.POST.get('input5', '')
     message6 = request.POST.get('input6', '')
     message7 = request.POST.get('input7', '')
+    message8 = request.POST.get('input8', '')
+    message9 = request.POST.get('input9', '')
 
     if 'lower' in request.POST:
         message2 = Text.to_lower_case(message)
@@ -28,10 +30,13 @@ def formatter(request):
         message4 = Text.char_count(message3)
     elif 'split' in request.POST:
         message6 = Text.split_string_by(message5, message7)
+    elif 'count' in request.POST:
+        message9 = Text.word_occurence_count(message8)
 
     print(request.POST)
 
     return render(request, 'stringFormatter/formatter.html', {'content': message, 'content2': message2,
                                                               'content3': message3, 'content4': message4,
                                                               'content5': message5, 'content6': message6,
-                                                              'content7': message7})
+                                                              'content7': message7, 'content8': message8,
+                                                              'content9': message9})

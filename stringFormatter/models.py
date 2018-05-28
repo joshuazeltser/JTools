@@ -34,4 +34,13 @@ class Text(models.Model):
         for x in range(0, len(words)):
             dict[words[x]] = words.count(words[x])
 
-        return str(dict)
+        string = ''
+        count = 1
+        for key in dict:
+            string += key + ': ' + str(dict[key])
+            if count < len(dict):
+                string += ', '
+
+            count += 1
+
+        return string

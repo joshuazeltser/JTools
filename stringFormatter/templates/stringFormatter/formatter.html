@@ -24,6 +24,7 @@
 
 
 
+
     </style>
 
 </head>
@@ -69,10 +70,11 @@
 </nav>
 
 <main role="main">
-
+<div class="jumbotron jumbotron-fluid">
+    <h1 class="display-4" align="center">String Formatter</h1>
+    </div>
     <br>
 
-    <br>
 
     <div class="container">
 
@@ -101,7 +103,9 @@
                                 autocomplete="off"> Lower Case
                         </button>
                     </p>
-
+                    <br>
+<hr>
+                    <br>
                     <p>
                     <h2>String Splitter</h2>
                     <div class="input-group">
@@ -112,13 +116,14 @@
                     </p>
 
 
-                    <div class="input-group" align="center">
+                    <div class="input-group">
                         <div class="input-group-prepend">
                             <button class="btn btn-warning" type="submit" name="split" value="split">Split Using
                             </button>
                         </div>
                         <div style="width: 200px;" align="center">
-                            <input type="text" class="form-control" name="input7" value="{{ content7 }}" placeholder="Enter character here" aria-label=""
+                            <input type="text" class="form-control" name="input7" value="{{ content7 }}"
+                                   placeholder="Enter character here" aria-label=""
                                    aria-describedby="basic-addon1">
                         </div>
                     </div>
@@ -130,14 +135,14 @@
                     <h2>Paragraph Review</h2>
 
                     <p>
-                        <textarea class="form-control" name="input3" id="input3"
+                        <textarea class="form-control" name="input3" id="input3" placeholder="Enter your text here"
                                   rows="10">{{ content3 }}</textarea>
                         <style>
                             textarea {
                                 resize: none;
                             }
+
                         </style>
-                        <input type="hidden" name="hidden" id="hidden" value="{{ content3 }}">
                     </p>
                     <p>
                         <button class="btn btn-success" type="submit" value="word" name="word" id="word"
@@ -150,6 +155,20 @@
                     <input type="text" style="width: 100px; text-align:center;" class="form-control" name="input4"
                            value="{{ content4 }}" readonly>
                 </div>
+
+            </div>
+            <br>
+            <hr>
+            <br>
+            <p>
+                <h2 align="center">Word Occurence</h2>
+            <textarea class="form-control" name="input8" rows="4" placeholder="Enter your text here">{{ content8 }}</textarea>
+            <textarea class="form-control" name="input9" rows="2" readonly>{{ content9 }}</textarea>
+            </p>
+            <div align="center">
+             <button class="btn btn-danger" type="submit" value="count" name="count" id="count"
+                                autocomplete="off"> Count Words
+                        </button>
             </div>
 
             <hr>
@@ -162,6 +181,7 @@
 </footer>
 
 <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+
 <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
         integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
         crossorigin="anonymous"></script>
@@ -171,6 +191,8 @@
 <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js"
         integrity="sha384-smHYKdLADwkXOn1EmN1qk/HfnUcbVRZyYmZ4qpPea6sjB/pTJ0euyQp0Mk8ck+5T"
         crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/clipboard.js/1.5.10/clipboard.min.js"></script>
+
 
 
 </body>
