@@ -40,3 +40,12 @@ def formatter(request):
                                                               'content5': message5, 'content6': message6,
                                                               'content7': message7, 'content8': message8,
                                                               'content9': message9})
+
+def about(request):
+    return render(request, 'stringFormatter/about.html')
+
+def randomiser(request):
+    return render(request, 'stringFormatter/randomiser.html')
+
+def pdfeditor(request):
+    return render(request, 'stringFormatter/pdfeditor.html')

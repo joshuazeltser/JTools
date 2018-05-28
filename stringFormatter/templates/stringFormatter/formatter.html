@@ -22,9 +22,6 @@
         }
 
 
-
-
-
     </style>
 
 </head>
@@ -45,33 +42,27 @@
                         class="sr-only">(current)</span></a>
             </li>
             <li class="nav-item">
-                <a class="nav-link" href="">About</a>
+                <a class="nav-link" href="/stringFormatter/about/">About</a>
             </li>
             <li class="nav-item">
                 <a class="nav-link" href="">Formatter</a>
             </li>
-            <li class="nav-item dropdown">
-                <a class="nav-link dropdown-toggle" href="http://example.com/" id="dropdown01" data-toggle="dropdown"
-                   aria-haspopup="true" aria-expanded="false">Dropdown</a>
-                <div class="dropdown-menu" aria-labelledby="dropdown01">
-                    <a class="dropdown-item" href="">Action</a>
-                    <a class="dropdown-item" href="">Another
-                        action</a>
-                    <a class="dropdown-item" href="">Something
-                        else here</a>
-                </div>
+            <li class="nav-item">
+                <a class="nav-link" href="/stringFormatter/randomiser/">Randomiser</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="/stringFormatter/pdfeditor/">PDFEditor</a>
             </li>
         </ul>
         <form class="form-inline my-2 my-lg-0">
-            <input class="form-control mr-sm-2" type="text" placeholder="Search" aria-label="Search">
-            <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
+            <!--<button class="btn btn-outline-success my-2 my-sm-0" type="submit">Log in</button>-->
         </form>
     </div>
 </nav>
 
 <main role="main">
-<div class="jumbotron jumbotron-fluid">
-    <h1 class="display-4" align="center">String Formatter</h1>
+    <div class="jumbotron jumbotron-fluid">
+        <h1 class="display-4" align="center">String Formatter</h1>
     </div>
     <br>
 
@@ -81,10 +72,9 @@
         <form action="" method="post">
             {% csrf_token %}
 
-            <!-- Example row of columns -->
             <div class="row">
+
                 <div class="col-md-6" align="center">
-                    <!--<div class="row" align="center">-->
                     <h2>Edit Case</h2>
                     <p>
                     <div class="input-group">
@@ -93,7 +83,6 @@
                         <input type="text" class="form-control" name="input1" value="{{ content }}">
                         <input type="text" class="form-control" name="input2" value="{{ content2 }}" readonly>
                     </div>
-
                     </p>
                     <p>
                         <button class="btn btn-primary" type="submit" value="upper" name="upper" id="upper"
@@ -103,18 +92,19 @@
                                 autocomplete="off"> Lower Case
                         </button>
                     </p>
-                    <br>
-<hr>
-                    <br>
-                    <p>
+
+                </div>
+                <div class="col-md-6" align="center">
+
                     <h2>String Splitter</h2>
+                    <p>
                     <div class="input-group">
                         <input type="text" class="form-control" name="input5" value="{{ content5 }}">
                         <input type="text" class="form-control" name="input6" value="{{ content6 }}" readonly>
                     </div>
-
                     </p>
 
+                    <p>
 
                     <div class="input-group">
                         <div class="input-group-prepend">
@@ -127,48 +117,56 @@
                                    aria-describedby="basic-addon1">
                         </div>
                     </div>
-
-                </div>
-
-                <div class="col-md-6" align="center">
-
-                    <h2>Paragraph Review</h2>
-
-                    <p>
-                        <textarea class="form-control" name="input3" id="input3" placeholder="Enter your text here"
-                                  rows="10">{{ content3 }}</textarea>
-                        <style>
-                            textarea {
-                                resize: none;
-                            }
-
-                        </style>
                     </p>
-                    <p>
-                        <button class="btn btn-success" type="submit" value="word" name="word" id="word"
-                                autocomplete="off"> Word Count
-                        </button>
-                        <button class="btn btn-success" type="submit" value="char" name="char" id="char"
-                                autocomplete="off"> Character Count
-                        </button>
-                    </p>
-                    <input type="text" style="width: 100px; text-align:center;" class="form-control" name="input4"
-                           value="{{ content4 }}" readonly>
                 </div>
 
             </div>
+
+            <br>
+            <hr>
+            <br>
+
+            <div align="center">
+                <h2>Paragraph Review</h2>
+
+                <p>
+            <textarea class="form-control" name="input3" id="input3" placeholder="Enter your text here"
+                      rows="7">{{ content3 }}</textarea>
+                    <style>
+            textarea {
+                resize: none;
+            }
+
+
+
+                    </style>
+                </p>
+                <p>
+                    <button class="btn btn-success" type="submit" value="word" name="word" id="word"
+                            autocomplete="off"> Word Count
+                    </button>
+                    <button class="btn btn-success" type="submit" value="char" name="char" id="char"
+                            autocomplete="off"> Character Count
+                    </button>
+                </p>
+                <input type="text" style="width: 100px; text-align:center;" class="form-control" name="input4"
+                       value="{{ content4 }}" readonly>
+
+            </div>
+            <!--&lt;!&ndash;</div>&ndash;&gt;-->
             <br>
             <hr>
             <br>
             <p>
-                <h2 align="center">Word Occurence</h2>
-            <textarea class="form-control" name="input8" rows="4" placeholder="Enter your text here">{{ content8 }}</textarea>
+            <h2 align="center">Word Occurence</h2>
+            <textarea class="form-control" name="input8" rows="4"
+                      placeholder="Enter your text here">{{ content8 }}</textarea>
             <textarea class="form-control" name="input9" rows="2" readonly>{{ content9 }}</textarea>
             </p>
             <div align="center">
-             <button class="btn btn-danger" type="submit" value="count" name="count" id="count"
-                                autocomplete="off"> Count Words
-                        </button>
+                <button class="btn btn-danger" type="submit" value="count" name="count" id="count"
+                        autocomplete="off"> Count Words
+                </button>
             </div>
 
             <hr>
@@ -192,7 +190,6 @@
         integrity="sha384-smHYKdLADwkXOn1EmN1qk/HfnUcbVRZyYmZ4qpPea6sjB/pTJ0euyQp0Mk8ck+5T"
         crossorigin="anonymous"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/clipboard.js/1.5.10/clipboard.min.js"></script>
-
 
 
 </body>
