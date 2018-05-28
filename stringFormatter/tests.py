@@ -20,7 +20,24 @@ class FormatterTests(TestCase):
     def test_to_lower_case_big(self):
         self.assertEquals(Text.to_lower_case("ABCDEFGHijklMNOPQRStuvwxyZ"), "abcdefghijklmnopqrstuvwxyz")
 
-    def test_word_occurence_count(self):
-        string = "hello my name is joshua and my name is joshua joshua is my name hello what the hell"
-        #can't get this test to work properly
-        print(json.dumps(Text.word_occurence_count(string)))
+class ViewTests(TestCase):
+
+    def test_index_exists(self):
+        index = self.client.get('/stringFormatter/')
+        self.assertEquals(index.status_code, 200)
+
+    def test_about_exists(self):
+        index = self.client.get('/stringFormatter/about/')
+        self.assertEquals(index.status_code, 200)
+
+    def test_formatter_exists(self):
+        index = self.client.get('/stringFormatter/formatter/')
+        self.assertEquals(index.status_code, 200)
+
+    def test_randomiser_exists(self):
+        index = self.client.get('/stringFormatter/randomiser/')
+        self.assertEquals(index.status_code, 200)
+
+    def test_pdfeditor_exists(self):
+        index = self.client.get('/stringFormatter/pdfeditor/')
+        self.assertEquals(index.status_code, 200)
