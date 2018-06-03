@@ -42,30 +42,28 @@ class ViewTests(TestCase):
         self.assertEquals(index.status_code, 200)
 
 
-class RandomTest(TestCase):
-
-    def test1(self):
-        rl = RandomList()
-
-        l = ['hello', 'world', 'how', 'are', 'you', 'today',
-             'hello', 'world', 'how', 'are', 'you', 'today',
-             'hello', 'world', 'how', 'are', 'you', 'today',
-             'hello', 'world', 'how', 'are', 'you', 'today',
-             'hello', 'world', 'how', 'are', 'you', 'today',
-             'hello', 'world', 'how', 'are', 'you', 'today',
-             'hello', 'world', 'how', 'are', 'you', 'today',
-             'hello', 'world', 'how', 'are', 'you', 'today',
-             'hello', 'world', 'how', 'are', 'you', 'today',
-             'hello', 'world', 'how', 'are', 'you', 'today']
-
-        rl.populate_list(l)
-
-        rl.shuffle_list()
-
-        # rl.write_to_spreadhseet()
-
-        # rl.create_new_worksheet()
-
-        rl.random_sublists(20)
+# class RandomTest(TestCase):
+    #     rl = RandomList()
+    #
+    #     l = ['hello', 'world', 'how', 'are', 'you', 'today',
+    #          'hello', 'world', 'how', 'are', 'you', 'today',
+    #          'hello', 'world', 'how', 'are', 'you', 'today',
+    #          'hello', 'world', 'how', 'are', 'you', 'today',
+    #          'hello', 'world', 'how', 'are', 'you', 'today',
+    #          'hello', 'world', 'how', 'are', 'you', 'today',
+    #          'hello', 'world', 'how', 'are', 'you', 'today',
+    #          'hello', 'world', 'how', 'are', 'you', 'today',
+    #          'hello', 'world', 'how', 'are', 'you', 'today',
+    #          'hello', 'world', 'how', 'are', 'you', 'today']
+    #
+    #     rl.populate_list(l)
+    #
+    #     rl.shuffle_list()
+    #
+    #     # rl.write_to_spreadhseet()
+    #
+    #     # rl.create_new_worksheet()
+    #
+    #     rl.random_sublists(20)
 
 #         TODO: Implement these tests

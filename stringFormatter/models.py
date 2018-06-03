@@ -73,12 +73,10 @@ class RandomList(models.Model):
         self.count += 1
         self.wb.save('randomised_list.xlsx')
 
-    def random_sublists(self, num):
+    def random_sublists_to_excel(self, num):
         self.shuffle_list()
 
         chunks = [self.list[x:x+num] for x in range(0, len(self.list), num)]
-
-        print(chunks)
 
         column = 1
         for group in range(len(chunks)):
@@ -92,4 +90,20 @@ class RandomList(models.Model):
         self.wb.save('randomised_list.xlsx')
 
 
+    def random_sublists_to_string(self, num):
 
+        result = ""
+
+        self.shuffle_list()
+
+        chunks = [self.list[x:x+num] for x in range(0, len(self.list), num)]
+
+        column = 1
+        for group in range(len(chunks)):
+            result += 'Group ' + str(column) + '/n'
+            line = 2
+            for td in range(len(chunks[group])):
+                result += chunks[group][td]
+                line += 1
+
+            column += 1

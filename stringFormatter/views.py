@@ -1,6 +1,6 @@
 from django.http import HttpResponse
 from django.shortcuts import render, redirect
-from .models import Text
+from .models import Text, RandomList
 
 
 def index(request):
@@ -45,7 +45,21 @@ def about(request):
     return render(request, 'stringFormatter/about.html')
 
 def randomiser(request):
-    return render(request, 'stringFormatter/randomiser.html')
+    message = request.POST.get('input1', '')
+    message2 = request.POST.get('input2', '')
+    message3 = request.POST.get('input3', '')
+
+    list = message.split('\n')
+
+    if 'randomise' in request.POST:
+        rl = RandomList()
+        rl.populate_list(list)
+
+        print(int(message2))
+        message3 = rl.random_sublists(int(message2))
+
+    return render(request, 'stringFormatter/randomiser.html', {'content': message, 'content2': message2,
+                                                              'content3': message3})
 
 def pdfeditor(request):
     return render(request, 'stringFormatter/pdfeditor.html')

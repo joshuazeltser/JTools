@@ -24,7 +24,7 @@ BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 SECRET_KEY = '*l-exp56@0rh%nr513y@8xsv-4bi#(8)j9bxom4plwwvqiog@5'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = False
+DEBUG = True
 
 ALLOWED_HOSTS = ['joshtools.herokuapp.com', '127.0.0.1', 'www.jtools.org.uk', 'jtools.org.uk']
 

@@ -25,6 +25,8 @@
 
 
 
+
+
     </style>
 
 </head>
@@ -72,19 +74,34 @@
 
     </div> <!-- /container -->
 
-    {% load static %}
+    <div class="container" align="center">
+        <form action="" method="post">
+            {% csrf_token %}
 
-    <img src="{% static '/ComingSoon1-01.jpg' %}" class="center"/>
-    <style>
-        img {
-            width: 40%;
-            height: 40%;
-            display: block;
-            margin-left: auto;
-            margin-right: auto;
-        }
+        <div class="row">
+            <div class="col-sm-4">
 
-    </style>
+                <textarea class="form-control" name="input1" id="input1" placeholder="Enter your text here"
+                          rows="30">{{ content }}</textarea>
+            </div>
+            <div class="col-sm-4">
+
+                    <button class="btn btn-primary" type="submit" value="randomise" name="randomise" id="randomise"
+                            autocomplete="off"> Randomise List
+                    </button>
+                    <br>
+                    <br>
+
+                     <input type="text" class="form-control" name="input2"  value="{{ content2 }}">
+            </div>
+            <div class="col-sm-4">
+                <textarea class="form-control" name="input3" id="input3" placeholder="Enter your text here"
+                          rows="30">{{ content3 }}</textarea>
+
+            </div>
+        </div>
+        </form>
+    </div>
 
 </main>
 
