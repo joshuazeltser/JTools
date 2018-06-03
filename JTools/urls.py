@@ -17,7 +17,7 @@ from django.contrib import admin
 from django.urls import include, path
 
 urlpatterns = [
-    path('.well-known/' , include('letsencrypt.urls')),
+    path(r'^\.well-known/' , include('letsencrypt.urls')),
     path('stringFormatter/', include('stringFormatter.urls')),
     path('admin/', admin.site.urls),
 
