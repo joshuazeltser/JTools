@@ -69,5 +69,27 @@ class RandomList(models.Model):
 
     def create_new_worksheet(self):
         self.wb.create_sheet('Sheet ' + str(self.count))
+        self.ws = self.wb['Sheet ' + str(self.count)]
         self.count += 1
         self.wb.save('randomised_list.xlsx')
+
+    def random_sublists(self, num):
+        self.shuffle_list()
+
+        chunks = [self.list[x:x+num] for x in range(0, len(self.list), num)]
+
+        print(chunks)
+
+        column = 1
+        for group in range(len(chunks)):
+            self.ws.cell(row=1, column=column, value='Group ' + str(column))
+            line = 2
+            for td in range(len(chunks[group])):
+                self.ws.cell(row=line, column=column, value=chunks[group][td])
+                line += 1
+
+            column += 1
+        self.wb.save('randomised_list.xlsx')
+
+
+
