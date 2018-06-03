@@ -1,6 +1,7 @@
 Django==2.0.6
 django-letsencrypt==3.0.1
 et-xmlfile==1.0.1
+gunicorn==19.8.1
 jdcal==1.4
 openpyxl==2.5.3
 pytz==2018.4
