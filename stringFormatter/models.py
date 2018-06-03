@@ -1,4 +1,6 @@
+import openpyxl as openpyxl
 from django.db import models
+from random import shuffle
 
 
 class Text(models.Model):
@@ -44,3 +46,28 @@ class Text(models.Model):
             count += 1
 
         return string
+
+
+class RandomList(models.Model):
+    list = []
+    wb = openpyxl.load_workbook('randomised_list.xlsx')
+    ws = wb.active
+    count = 1
+
+    def populate_list(self, l):
+        self.list = l[:]
+
+    def shuffle_list(self):
+        shuffle(self.list)
+
+    def write_to_spreadhseet(self):
+        line = 1
+        for td in range(len(self.list)):
+            self.ws.cell(row=line, column=1, value=self.list[td])
+            line += 1
+        self.wb.save('randomised_list.xlsx')
+
+    def create_new_worksheet(self):
+        self.wb.create_sheet('Sheet ' + str(self.count))
+        self.count += 1
+        self.wb.save('randomised_list.xlsx')

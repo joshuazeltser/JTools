@@ -2,8 +2,7 @@ import json
 
 from django.test import TestCase
 
-from .models import Text
-
+from .models import Text, RandomList
 
 
 class FormatterTests(TestCase):
@@ -41,3 +40,20 @@ class ViewTests(TestCase):
     def test_pdfeditor_exists(self):
         index = self.client.get('/stringFormatter/pdfeditor/')
         self.assertEquals(index.status_code, 200)
+
+
+class RandomTest(TestCase):
+
+    def test1(self):
+        rl = RandomList()
+
+        l = ['hello', 'world', 'how', 'are', 'you', 'today']
+
+        rl.populate_list(l)
+
+        rl.shuffle_list()
+
+        rl.write_to_spreadhseet()
+
+        rl.create_new_worksheet()
+
