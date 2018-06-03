@@ -1,5 +1,7 @@
 from django.http import HttpResponse
 from django.shortcuts import render, redirect
+
+from JTools import settings
 from .models import Text
 
 
@@ -49,3 +51,6 @@ def randomiser(request):
 
 def pdfeditor(request):
     return render(request, 'stringFormatter/pdfeditor.html')
+
+def acme_challenge(request):
+    return HttpResponse(settings.ACME_CHALLENGE_CONTENT)
