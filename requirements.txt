@@ -5,3 +5,4 @@ gunicorn==19.8.1
 jdcal==1.4
 openpyxl==2.5.3
 pytz==2018.4
+whitenoise==3.3.1
