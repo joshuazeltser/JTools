@@ -51,6 +51,3 @@ def randomiser(request):
 
 def pdfeditor(request):
     return render(request, 'stringFormatter/pdfeditor.html')
-
-def acme_challenge(request):
-    return HttpResponse(settings.ACME_CHALLENGE_CONTENT)

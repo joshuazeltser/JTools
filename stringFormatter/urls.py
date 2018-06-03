@@ -9,7 +9,6 @@ urlpatterns = [
         path(r'about/', views.about, name='about'),
         path(r'randomiser/', views.randomiser, name='randomiser'),
         path(r'pdfeditor/', views.pdfeditor, name='pdfeditor'),
-        path(r'^.well-known/acme-challenge/.*$',
-            views.acme_challenge, name='acme-challenge'),
+
 
 ]
